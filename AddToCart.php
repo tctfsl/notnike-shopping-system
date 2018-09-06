@@ -3,12 +3,12 @@
 	{
 		session_start();
 	}
-	if(!$_SESSION["logged_in"])
-	{
-		include 'Dummy.php';
-	}
-	else
-	{
+	//if(!$_SESSION["logged_in"])
+	//{
+		//include 'Dummy.php';
+	//}
+	//else
+	//{
 		$conn = mysqli_connect("localhost", "root", "");
 		if(!$conn) {
 			die("Could not connect: ".mysqli_connect_error());
@@ -25,7 +25,8 @@
 		$stmt->bind_param("ii", $userID, $addID);
 		$stmt->execute();
 		
-		echo '<script language="javascript">alert("Item has been added to your cart! Click on your cart to review and checkout");</script>';
+		
 		include 'Catalog.php';
-	}
+		echo '<script language="javascript">alert("Item has been added to your cart! Click on your cart to review and checkout");</script>';
+	//}
 ?>

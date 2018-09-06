@@ -26,8 +26,11 @@
 		}
 	}
 	
-	
-	
-	include "Dummy.php";
+	$sqlstmt = "DELETE FROM cart WHERE UserID=".$UserID."";
+	if($result = mysqli_query($conn, $sqlstmt))
+	{
+		echo '<script language="javascript">alert("Item has been added to your cart! Click on your cart to review and checkout");</script>';
+		include "Catalog.php";
+	}
 	
 ?>
